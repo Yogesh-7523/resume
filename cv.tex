@@ -30,6 +30,10 @@
   \vspace{-4pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
+% Fix font shape issue by avoiding \textsc and using small caps via fontspec or default font
+% Since OT1/cmr/bx/sc is missing, replace \scshape with \textnormal or bold small caps if desired (here replaced with bold)
+% Replace \scshape with \bfseries for section titles
+
 % Custom commands for listing
 \newcommand{\resumeItem}[1]{
   \item\small{
@@ -45,14 +49,14 @@
 }
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    {\Huge \scshape Yogesh Kumar Singh} \\ \vspace{1pt}
+    {\Huge \bfseries Yogesh Kumar Singh} \\ \vspace{1pt}
     \small \raisebox{-0.1\height}\faPhone\ +91 8303906144 ~ 
     \href{mailto:yogesh75232000@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{yogesh75232000@gmail.com}} ~ 
     \href{https://www.linkedin.com/in/yogesh-kumar-singh-b61406224/}{\raisebox{-0.2\height}\faLinkedin\ \underline{LinkedIn}}  ~
@@ -63,7 +67,7 @@
 
 %-----------PROFESSIONAL SUMMARY-----------
 \section{Professional Summary}
-\begin{itemize}[leftmargin=*,label={}]
+\begin{itemize}[leftmargin=*,label={}, itemsep=0pt]
 \item
 Software Engineer with 1 years designing scalable Java and Spring Boot microservices, experienced with REST APIs, JWT auth, Docker, Redis, CI/CD, and system design. Proven record increasing reliability and reducing transaction failures significantly.
 \end{itemize}
@@ -85,8 +89,7 @@ Software Engineer with 1 years designing scalable Java and Spring Boot microserv
 \section{Experience}
 \resumeSubHeadingListStart
 \resumeSubheading
-    {Systems Engineer, Tata Consultancy Services}{Feb 2025 -- Present}
-    {Noida, Uttar Pradesh, India}{}
+    {Systems Engineer, Tata Consultancy Services}{Feb 2025 -- Present}{Noida, Uttar Pradesh, India}{}
 \resumeItemListStart
     \resumeItem{Designed and deployed 20+ RESTful APIs for GeM 2.0 (Government e-Marketplace) using Spring Boot and PostgreSQL, improving response times by 30\% and supporting 10k+ daily users.}
     \resumeItem{Built and maintained a scalable microservices architecture with Spring Cloud, improving service reliability and reducing release cycle time by 25\%.}
@@ -107,15 +110,16 @@ Software Engineer with 1 years designing scalable Java and Spring Boot microserv
 \resumeSubHeadingListStart
 \resumeSubheading
     {PredictFlow - Smart Payment Retry Engine}{Oct 2024 -- Present}
-    {}{}
-    \resumeItemListStart
-        \resumeItem{Engineered payment retry system with 3 Spring Boot microservices, reducing failed retries by 60\%.}
-        \resumeItem{Implemented JWT authentication with Redis token blacklist and role-based access control for security.}
-        \resumeItem{Developed rule-based retry prediction using error type, time, and retry count to prevent retry storms.}
-        \resumeItem{Utilized Redis caching and Resilience4j circuit breaker patterns to ensure high availability.}
-        \resumeItem{Containerized with Docker Compose for streamlined deployment and scalability.}
-        \resumeItem{Achieved 85\%+ test coverage with JUnit, enabling reliable production releases.}
-    \resumeItemListEnd
+    { }{}\resumeItemListStart
+    \resumeItem{Engineered payment retry system with 3 Spring Boot microservices,\\
+reducing failed retries by 60\%.}
+    \resumeItem{Implemented JWT authentication with Redis token blacklist and role-based access control for security.}
+    \resumeItem{Developed rule-based retry prediction using error type, time, and retry count to prevent retry storms.}
+    \resumeItem{Utilized Redis caching and Resilience4j circuit breaker patterns to ensure high availability.}
+    \resumeItem{Containerized with Docker Compose for streamlined deployment and scalability.}
+    \resumeItem{Achieved 85\%+ test coverage with JUnit, enabling reliable production releases.}
+\resumeItemListEnd
+
 \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
@@ -132,7 +136,7 @@ Software Engineer with 1 years designing scalable Java and Spring Boot microserv
     \item Open-Source Contributor, GSSOC 2023
     \item Global Nominee and Regional Winner, NASA Space Apps Challenge 2022
     \item Runner-up, THacks 2.0 Hackathon
-    \item Contributor to Hacktoberfest, 2021 & 2022
+    \item Contributor to Hacktoberfest, 2021 \& 2022
 \end{itemize}
 
 \end{document}
